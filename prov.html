@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="be">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тэст па правілах напісання "у" і "ў"</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .correct-answer {
+            background-color: #e6ffe6;
+        }
+        .incorrect-answer {
+            background-color: #ffe6e6;
+        }
+        .missed-correct {
+            background-color: #ffffcc;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #ccffcc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .home-button {
+            background-color: #2196F3;
+        }
+        .home-button:hover {
+            background-color: #0b7dda;
+        }
+        .buttons-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+        }
+        .score-details {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тэст па правілах напісання "у" і "ў"</h1>
+    
+    <div class="question" id="q1">
+        <p>1. Ці згодны вы з тым, што ў (у нескладовае) пішацца пасля галосных?</p>
+        <div class="options">
+            <label id="q1_A"><input type="radio" name="q1" value="A"> А) Правільнае сцвярджэнне</label><br>
+            <label id="q1_B"><input type="radio" name="q1" value="B"> Б) Няправільнае сцвярджэнне</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q2">
+        <p>2. Адзначце ўмову, якая не адпавядае напісанню у (у складовага):</p>
+        <div class="options">
+            <label id="q2_A"><input type="checkbox" name="q2" value="A"> А) у іншамоўных словах, якія заканчваюцца на -ум, -ус</label><br>
+            <label id="q2_B"><input type="checkbox" name="q2" value="B"> Б) у словах з націскным [у]</label><br>
+            <label id="q2_C"><input type="checkbox" name="q2" value="C"> В) у пачатку ўласных назваў</label><br>
+            <label id="q2_D"><input type="checkbox" name="q2" value="D"> Г) пасля галосных у пачатку, у сярэдзіне і на канцы слоў</label><br>
+            <label id="q2_E"><input type="checkbox" name="q2" value="E"> Д) на канцы іншамоўных слоў не пад націскам</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q3">
+        <p>3. Адзначце словы, у якіх на месцы пропуску неабходна пісаць ў (у нескладовае):</p>
+        <div class="options">
+            <label id="q3_A"><input type="checkbox" name="q3" value="A"> А) тры..мф</label><br>
+            <label id="q3_B"><input type="checkbox" name="q3" value="B"> Б) ма..чанне</label><br>
+            <label id="q3_C"><input type="checkbox" name="q3" value="C"> В) а..дыторыя</label><br>
+            <label id="q3_D"><input type="checkbox" name="q3" value="D"> Г) кло..н</label><br>
+            <label id="q3_E"><input type="checkbox" name="q3" value="E"> Д) а..торак</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q4">
+        <p>4. Колькі слоў з ў (у нескладовым) сустракаецца ў прыказцы: Яму раніцаю росна, … по…дзень млосна, а …вечары камары кусаюць? Адказ запішыце ў выглядзе лічбы.</p>
+        <div class="options">
+            <input type="text" id="q4_answer" placeholder="Увядзіце адказ">
+        </div>
+    </div>
+    
+    <div class="question" id="q5">
+        <p>5. Адзначце радок, у якім ва ўсіх словах замест пропуску трэба пісаць ў (у нескладовае):</p>
+        <div class="options">
+            <label id="q5_A"><input type="radio" name="q5" value="A"> А) ска..т, архівары..с, А..гій</label><br>
+            <label id="q5_B"><input type="radio" name="q5" value="B"> Б) ..нія, прэзіды..м, поды..м</label><br>
+            <label id="q5_C"><input type="radio" name="q5" value="C"> В) фа..на, ва …ніверсітэце, бо..лінг</label><br>
+            <label id="q5_D"><input type="radio" name="q5" value="D"> Г) Ма..глі, а..кцыён, сакса..л</label><br>
+            <label id="q5_E"><input type="radio" name="q5" value="E"> Д) сімпозі..м, по..к, бакала..р</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q6">
+        <p>6. Запоўніце месца пропуску неабходным словам.</p>
+        <p>Літара ў (у нескладовае) пішацца пасля злучка і двукосся, калі папярэдняе слова заканчваецца на</p>
+        <div class="options">
+            <input type="text" id="q6_answer" placeholder="Увядзіце адказ">
+        </div>
+    </div>
+    
+    <div class="question" id="q7">
+        <p>7. Адзначце словы, у якіх прапушчана літара у (у складовае):</p>
+        <div class="options">
+            <label id="q7_A"><input type="checkbox" name="q7" value="A"> А) думкі-…спаміны</label><br>
+            <label id="q7_B"><input type="checkbox" name="q7" value="B"> Б) стра..с</label><br>
+            <label id="q7_C"><input type="checkbox" name="q7" value="C"> В) за…тра</label><br>
+            <label id="q7_D"><input type="checkbox" name="q7" value="D"> Г) Ланда..</label><br>
+            <label id="q7_E"><input type="checkbox" name="q7" value="E"> Д) новая ..рна</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q8">
+        <p>8. Ці згодны вы з тым, што пасля знакаў прыпынку літара у (у складовае) не пішацца?</p>
+        <div class="options">
+            <label id="q8_A"><input type="radio" name="q8" value="A"> А) Правільнае сцвярджэнне</label><br>
+            <label id="q8_B"><input type="radio" name="q8" value="B"> Б) Няправільнае сцвярджэнне</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q9">
+        <p>9. Адзначце прыклады з правільным напісаннем літар "у/ў" у словах:</p>
+        <div class="options">
+            <label id="q9_A"><input type="checkbox" name="q9" value="A"> А) закончыць урок</label><br>
+            <label id="q9_B"><input type="checkbox" name="q9" value="B"> Б) добрая, удалая прапанова</label><br>
+            <label id="q9_C"><input type="checkbox" name="q9" value="C"> В) свежы соўс</label><br>
+            <label id="q9_D"><input type="checkbox" name="q9" value="D"> Г) святочна-урачысты дзень</label><br>
+            <label id="q9_E"><input type="checkbox" name="q9" value="E"> Д) настаўніца Ірына Ўладзіславаўна</label>
+        </div>
+    </div>
+    
+    <div class="question" id="q10">
+        <p>10. Адзначце радкі, дзе ўсе словы напісаны правільна:</p>
+        <div class="options">
+            <label id="q10_A"><input type="checkbox" name="q10" value="A"> А) заключылі унію, крыкнулі "ўра", жанчына-ўрач</label><br>
+            <label id="q10_B"><input type="checkbox" name="q10" value="B"> Б) прыехаў у аўторак, сядзіць молчкі, пакласці анчоус</label><br>
+            <label id="q10_C"><input type="checkbox" name="q10" value="C"> В) зялёная травка, расказаць пра Ўладзіміра Караткевіча, прапанаваў узначаліць</label><br>
+            <label id="q10_D"><input type="checkbox" name="q10" value="D"> Г) вопытны натарыўс, раманс "Зорка Венера" ўсім падабаецца, за Ўральскім хрыбтом</label><br>
+            <label id="q10_E"><input type="checkbox" name="q10" value="E"> Д) радыус дзеяння, стварыць утульнасць, першы раўнд</label>
+        </div>
+    </div>
+        <div class="question" id="q11">
+        <p>11. У якім слове трэба пісаць "ў" (нескладовае)?</p>
+        <div class="options">
+            <label id="q11_A"><input type="radio" name="q11" value="A"> А) наста..нік</label><br>
+            <label id="q11_B"><input type="radio" name="q11" value="B"> Б) буда..нік</label><br>
+            <label id="q11_C"><input type="radio" name="q11" value="C"> В) ..вага</label><br>
+            <label id="q11_D"><input type="radio" name="q11" value="D"> Г) тра..ка</label><br>
+            <label id="q11_E"><input type="radio" name="q11" value="E"> Д) р..чай</label>
+        </div>
+    </div>
+
+    <div class="question" id="q12">
+        <p>12. Выберыце тыя словы, дзе пішацца літара у:</p>
+        <div class="options">
+            <label id="q12_A"><input type="checkbox" name="q12" value="A"> А) в..чань</label><br>
+            <label id="q12_B"><input type="checkbox" name="q12" value="B"> Б) былі .. лесе</label><br>
+            <label id="q12_C"><input type="checkbox" name="q12" value="C"> В) ..бачыла</label><br>
+            <label id="q12_D"><input type="checkbox" name="q12" value="D"> Г) во..к</label><br>
+            <label id="q12_E"><input type="checkbox" name="q12" value="E"> Д) чыта..</label>
+        </div>
+    </div>
+
+    <div class="question" id="q13">
+        <p>13. У якіх выпадках "ў" (нескладовае) пішацца пасля знака прыпынку?</p>
+        <div class="options">
+            <label id="q13_A"><input type="checkbox" name="q13" value="A"> А) Пасля двукосся</label><br>
+            <label id="q13_B"><input type="checkbox" name="q13" value="B"> Б) Пасля кропкі</label><br>
+            <label id="q13_C"><input type="checkbox" name="q13" value="C"> В) Пасля дэфіса</label><br>
+            <label id="q13_D"><input type="checkbox" name="q13" value="D"> Г) Пасля зычных</label><br>
+            <label id="q13_E"><input type="checkbox" name="q13" value="E"> Д) Не пішацца ні ў якіх выпадках</label>
+        </div>
+    </div>
+
+    <div class="question" id="q14">
+        <p>14. Колькі "ў" (нескладовых) у сказе: "Т..рсевіч сказа.. Лабановіч.., што её хоча паказаць ям.. да..нейшыя магілкі, а потым павё.. сябра .. невялічкі лес.</p>
+        <div class="options">
+            <input type="text" id="q14_answer" placeholder="Увядзіце адказ">
+        </div>
+    </div>
+
+    <div class="question" id="q15">
+        <p>15. Адзначце радок, дзе ва ўсіх словах трэба пісаць "ў" (нескладовае):</p>
+        <div class="options">
+            <label id="q15_A"><input type="radio" name="q15" value="A"> А) Галіна _ладзіміра_на, на _згорку, ва _ніверсітэце</label><br>
+            <label id="q15_B"><input type="radio" name="q15" value="B"> Б) ток–шо_, на шаччыне, садонік</label><br>
+            <label id="q15_C"><input type="radio" name="q15" value="C"> В) ласта_ка, ра_нд, а_тарытэт</label><br>
+            <label id="q15_D"><input type="radio" name="q15" value="D"> Г) поды_м, а_дыенцыя, за_чора</label><br>
+        </div>
+    </div>
+
+    <div class="question" id="q16">
+        <p>16. У якім горадзе знаходзіцца помнік літары "Ў"?</p>
+        <div class="options">
+            <input type="text" id="q16_answer" placeholder="Увядзіце адказ">
+        </div>
+    </div>
+    
+    <div class="buttons-container">
+    <button onclick="checkAnswers()">Праверыць адказы</button>
+    <button class="home-button" onclick="goToHome()">На галоўную</button>
+    </div>
+    
+    <div id="result" class="result" style="display: none;"></div>
+    <div id="scoreDetails" class="score-details" style="display: none;"></div>
+    
+    <script>
+        function checkAnswers() {
+            // Правильные ответы
+            const correctAnswers = {
+                q1: ["A"],
+                q2: ["D"],
+                q3: ["B", "C", "D", "E"],
+                q4: "2",
+                q5: ["C"],
+                q6: ["галосны", "галосныя"],
+                q7: ["B", "D", "E"],
+                q8: ["B"],
+                q9: ["A", "B", "D"],
+                q10: ["A", "E"],
+                q11: ["A", "B", "D"],
+                q12: ["A", "C"],
+                q13: ["A", "C"],
+                q14: "4",
+                q15: ["C"],
+                q16: ["полацк", "полаку"]
+            };
+            
+            let score = 0;
+            const totalQuestions = 16;
+            let scoreDetails = "";
+            
+            // Проверка каждого вопроса
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionId = "q" + i;
+                let userAnswers = [];
+                let questionScore = 0;
+                
+                if (i === 4 || i === 6 || i === 14 || i === 16) {
+                    // Вопросы с текстовым ответом
+                    const inputElement = document.getElementById(questionId + "_answer");
+                    userAnswers = [inputElement.value.trim().toLowerCase()];
+                    
+                    if (userAnswers[0] === correctAnswers[questionId].toString().toLowerCase()) {
+                        score += 1;
+                        questionScore = 1;
+                        inputElement.style.backgroundColor = "#e6ffe6";
+                    } else {
+                        inputElement.style.backgroundColor = "#ffe6e6";
+                    }
+                } else {
+                    // Вопросы с выбором вариантов
+                    const inputs = document.querySelectorAll(`#${questionId} input[type='radio'], #${questionId} input[type='checkbox']`);
+                    let correctSelected = 0;
+                    let incorrectSelected = 0;
+                    let totalCorrect = correctAnswers[questionId].length;
+                    
+                    // Сбросить все подсветки перед проверкой
+                    inputs.forEach(input => {
+                        const label = input.parentElement;
+                        label.classList.remove("correct-answer", "incorrect-answer", "missed-correct");
+                    });
+                    
+                    // Проверить выбранные ответы
+                    inputs.forEach(input => {
+                        if (input.checked) {
+                            userAnswers.push(input.value);
+                            
+                            // Подсветить выбранные ответы
+                            const label = input.parentElement;
+                            if (correctAnswers[questionId].includes(input.value)) {
+                                label.classList.add("correct-answer");
+                                correctSelected++;
+                            } else {
+                                label.classList.add("incorrect-answer");
+                                incorrectSelected++;
+                            }
+                        }
+                    });
+                    
+                    // Подсветить пропущенные правильные ответы
+                    correctAnswers[questionId].forEach(correct => {
+                        const correctInput = document.querySelector(`#${questionId}_${correct} input`);
+                        if (!correctInput.checked) {
+                            const label = correctInput.parentElement;
+                            label.classList.add("missed-correct");
+                        }
+                    });
+                    
+                    // Рассчитать баллы для вопросов с множественным выбором
+                    if (inputs[0].type === 'checkbox') {
+                        if (correctSelected === totalCorrect && incorrectSelected === 0) {
+                            // Все правильно
+                            questionScore = 1;
+                        } else if (correctSelected > 0 && incorrectSelected === 0) {
+                            // Частично правильно (0.5 балла)
+                            questionScore = 0.5;
+                        }
+                    } else {
+                        // Для одиночного выбора - только полный балл
+                        if (correctSelected === 1 && incorrectSelected === 0) {
+                            questionScore = 1;
+                        }
+                    }
+                    
+                    score += questionScore;
+                }
+                
+                // Добавить детализацию баллов
+                scoreDetails += `<p>Пытанне ${i}: ${questionScore.toFixed(1)} / 1.0</p>`;
+            }
+            
+            // Показать результат
+            const resultElement = document.getElementById("result");
+            resultElement.style.display = "block";
+            resultElement.textContent = `Вы адказалі правільна на ${score.toFixed(1)} з ${totalQuestions} пытанняў.`;
+            
+            // Показать детализацию баллов
+            const scoreDetailsElement = document.getElementById("scoreDetails");
+            scoreDetailsElement.style.display = "block";
+            scoreDetailsElement.innerHTML = scoreDetails;
+            
+            if (score === totalQuestions) {
+                resultElement.classList.add("success");
+            }
+        }
+    </script>
+</body>
+</html>
